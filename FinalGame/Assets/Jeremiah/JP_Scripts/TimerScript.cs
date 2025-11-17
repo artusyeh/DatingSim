@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime = 60f; 
-    [SerializeField] GameObject playAgainPanel; 
+    [SerializeField] float remainingTime = 60f;
+    [SerializeField] GameObject playAgainPanel;
+    [SerializeField] ParticleSystem heartBreakparticles;
+    [SerializeField] Button yesButton;
+    [SerializeField] Button noButton;
+    [SerializeField] ScreenShake screenShake;
 
     private bool isBlinking = false;
 
@@ -62,5 +66,29 @@ public class TimerScript : MonoBehaviour
             timerText.color = Color.white;
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void OnNoButtonClick()
+    {
+        remainingTime -= 5f;
+        if (remainingTime < 0) remainingTime = 0;
+
+        if (heartBreakparticles != null)
+        {
+            heartBreakparticles.Play();
+        }
+
+        if (screenShake != null)
+        {
+            StartCoroutine(screenShake.Shaking());
+        }
+       
+        HideButtons();
+        
+    }
+    public void HideButtons()
+    {
+        if (yesButton != null) yesButton.gameObject.SetActive(false);
+        if (noButton != null) noButton.gameObject.SetActive(false);
     }
 }
