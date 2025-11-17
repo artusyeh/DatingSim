@@ -13,6 +13,10 @@ public class TimerScript : MonoBehaviour
     [SerializeField] Button yesButton;
     [SerializeField] Button noButton;
     [SerializeField] ScreenShake screenShake;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip tickClip;
+
+    private int lastSecond = -1;
 
     private bool isBlinking = false;
 
@@ -39,17 +43,31 @@ public class TimerScript : MonoBehaviour
             remainingTime = 0;
             EndGame();
         }
+
         int minutes = Mathf.FloorToInt(remainingTime / 60f);
         int seconds = Mathf.FloorToInt(remainingTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
 
-    void EndGame()
-    {
-        enabled = false;
+        if (remainingTime <= 10)
+        {
+            if (seconds != lastSecond)
+            {
+                lastSecond = seconds;
+                if (audioSource != null && tickClip != null)
+                {
+                    audioSource.PlayOneShot(tickClip);
+                }
+            }
+        }
 
-        if (playAgainPanel != null)
-            playAgainPanel.SetActive(true);
+
+        void EndGame()
+        {
+            enabled = false;
+
+            if (playAgainPanel != null)
+                playAgainPanel.SetActive(true);
+        }
     }
 
     public void RestartScene()
