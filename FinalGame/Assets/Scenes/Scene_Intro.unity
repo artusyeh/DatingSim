@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.76001, y: -132.22998}
-  m_SizeDelta: {x: -224.77, y: -332.12}
+  m_AnchoredPosition: {x: -9.76001, y: -130.87}
+  m_SizeDelta: {x: -224.77, y: -329.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136111309
 MonoBehaviour:
@@ -477,7 +477,7 @@ MonoBehaviour:
   choicesContainer: {fileID: 1506765729}
   choiceButtonPrefab: {fileID: 5206834056752777797, guid: 974104164e23cbd45ae2aadea45b6594, type: 3}
   dialogueFileName: opening_scene
-  typewriterSpeed: 0.02
+  typewriterSpeed: 0.04
   typeSFXSource: {fileID: 1862289369}
   typeSFXClip: {fileID: 8300000, guid: 764e8e341639f0e46b2a0503131a3037, type: 3}
   minPitch: 0.93
@@ -1187,7 +1187,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 764e8e341639f0e46b2a0503131a3037, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.414
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
