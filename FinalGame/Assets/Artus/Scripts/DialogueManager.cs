@@ -9,14 +9,21 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     public TMP_Text speakerText;
     public TMP_Text bodyText;
-    public Transform choicesContainer;
-    public Button choiceButtonPrefab;
+    public Transform choicesContainer;      // Vertical Layout Group
+    public Button choiceButtonPrefab;       // Prefab for a choice button
 
     [Header("Dialogue File")]
-    public string dialogueFileName = "opening_scene";
+    public string dialogueFileName = "opening_scene"; 
 
     [Header("Typewriter Settings")]
     public float typewriterSpeed = 0.02f;   // seconds per character
+
+    [Header("Typewriter SFX")]
+    public AudioSource typeSFXSource;
+    public AudioClip typeSFXClip;
+    public float minPitch = 0.9f;
+    public float maxPitch = 1.1f;
+    public int charsPerSound = 2;          // play sound every X characters
 
     private DialogueRoot dialogueRoot;
     private Dictionary<string, DialogueNode> nodeLookup;
@@ -31,6 +38,9 @@ public class DialogueManager : MonoBehaviour
     private string fullText = "";
     private Coroutine typingCoroutine;
 
+    //timer inspector
+    public TimerScript timerScript;
+
     void Start()
     {
         LoadDialogue();
@@ -42,12 +52,12 @@ public class DialogueManager : MonoBehaviour
         // Left-click behavior
         if (Input.GetMouseButtonDown(0))
         {
-            // 1) If text is still typing, finish it instantly
+
             if (isTyping)
             {
                 FinishTypingInstantly();
             }
-            // 2) Otherwise, if we're in "click to continue" mode, go to next node
+
             else if (waitingForClick && !string.IsNullOrEmpty(nextNodeOnClick))
             {
                 waitingForClick = false;
@@ -60,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     void LoadDialogue()
     {
-        // Your JSON should be at: Assets/Dialogue/Resources/opening_scene.json
+        // JSON should be at: Assets/Dialogue/Resources/opening_scene.json
         TextAsset jsonAsset = Resources.Load<TextAsset>(dialogueFileName);
         if (jsonAsset == null)
         {
@@ -133,6 +143,12 @@ public class DialogueManager : MonoBehaviour
 
         // Start typewriter effect for this node's text
         StartTyping(currentNode.text);
+
+         if(nodeId == "ending_good")
+         {
+          if (timerScript != null)
+          timerScript.StopTimer();
+         }
     }
 
     // TYPEWRITER LOGIC
@@ -142,7 +158,9 @@ public class DialogueManager : MonoBehaviour
         StopTypingIfNeeded();
 
         fullText = text ?? "";
-        bodyText.text = "";
+        if (bodyText != null)
+            bodyText.text = "";
+
         typingCoroutine = StartCoroutine(TypeTextCoroutine(fullText));
     }
 
@@ -152,21 +170,31 @@ public class DialogueManager : MonoBehaviour
 
         for (int i = 0; i < textToType.Length; i++)
         {
-            bodyText.text += textToType[i];
+            if (bodyText != null)
+                bodyText.text += textToType[i];
+
+            // Play sound every few characters
+            if (charsPerSound > 0 && i % charsPerSound == 0)
+            {
+                PlayTypeSound();
+            }
+
             yield return new WaitForSeconds(typewriterSpeed);
         }
 
         isTyping = false;
         typingCoroutine = null;
 
-        // After finishing typing, decide what to show (choices or click-to-continue)
         OnTypingComplete();
     }
 
     void FinishTypingInstantly()
     {
         StopTypingIfNeeded();
-        bodyText.text = fullText;
+
+        if (bodyText != null)
+            bodyText.text = fullText;
+
         isTyping = false;
         OnTypingComplete();
     }
@@ -179,6 +207,15 @@ public class DialogueManager : MonoBehaviour
             typingCoroutine = null;
         }
         isTyping = false;
+    }
+
+    void PlayTypeSound()
+    {
+        if (typeSFXSource != null && typeSFXClip != null)
+        {
+            typeSFXSource.pitch = Random.Range(minPitch, maxPitch);
+            typeSFXSource.PlayOneShot(typeSFXClip);
+        }
     }
 
     void OnTypingComplete()
@@ -209,7 +246,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
     // CHOICES UI
+
 
     void ClearChoices()
     {
@@ -244,9 +283,29 @@ public class DialogueManager : MonoBehaviour
 
         btn.onClick.AddListener(() =>
         {
-            GoToNode(choice.next);
+            //GoToNode(choice.next);
+            HandleChoiceSelection(choice);
         });
 
-        Debug.Log("Created choice button: " + choice.text + " -> " + choice.next);
+        Debug.Log("Created choice button: " + choice.text + " > " + choice.next);
+    }
+    void HandleChoiceSelection(Choice choice)
+    {
+        if (!choice.isCorrect)
+        {
+            if (timerScript != null)
+                timerScript.StartTimer();
+        }
+
+        GoToNode(choice.next);
+        ClearChoices();
+
+        if (choice.next == "ending_good")
+        {
+            if (timerScript != null)
+                timerScript.StopTimer();
+        }
     }
 }
+
+

@@ -1,21 +1,48 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime = 60f; 
-    [SerializeField] GameObject playAgainPanel; 
+    [SerializeField] float startingTime = 60f;
+    [SerializeField] GameObject playAgainPanel;
+    [SerializeField] ParticleSystem heartBreakparticles;
+    [SerializeField] ScreenShake screenShake;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip tickClip;
 
+    private float remainingTime;
+    private int lastSecond = -1;
     private bool isBlinking = false;
 
     void Start()
     {
         if (playAgainPanel != null)
             playAgainPanel.SetActive(false);
+        
+        remainingTime = startingTime;
+        enabled = false;
+    }
+
+    public void StartTimer(bool reset = false)
+    {
+        if (reset)
+            remainingTime = startingTime;
+
+        enabled = true;
+
+        if (heartBreakparticles != null)
+            heartBreakparticles.Play();
+
+        if (screenShake != null)
+            StartCoroutine(screenShake.Shaking());
+    }
+    public void StopTimer()
+    {
+        enabled = false;              
+        isBlinking = false;           
+        timerText.color = Color.white; 
     }
 
     void Update()
@@ -35,18 +62,34 @@ public class TimerScript : MonoBehaviour
             remainingTime = 0;
             EndGame();
         }
+
         int minutes = Mathf.FloorToInt(remainingTime / 60f);
         int seconds = Mathf.FloorToInt(remainingTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+
+        if (remainingTime <= 10)
+        {
+            if (seconds != lastSecond) 
+            {
+                lastSecond = seconds;
+                if (audioSource != null && tickClip != null)
+                {
+                    audioSource.PlayOneShot(tickClip);
+                }
+            }
+        }
+
 
     void EndGame()
     {
         enabled = false;
+        isBlinking = false;
+        timerText.color = Color.white;
 
         if (playAgainPanel != null)
             playAgainPanel.SetActive(true);
     }
+        }
 
     public void RestartScene()
     {
@@ -63,4 +106,28 @@ public class TimerScript : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+  /*  public void OnNoButtonClick()
+    {
+        remainingTime -= 5f;
+        if (remainingTime < 0) remainingTime = 0;
+
+        if (heartBreakparticles != null)
+        {
+            heartBreakparticles.Play();
+        }
+
+        if (screenShake != null)
+        {
+            StartCoroutine(screenShake.Shaking());
+        }
+       
+        HideButtons();
+        
+    }
+    public void HideButtons()
+    {
+        if (yesButton != null) yesButton.gameObject.SetActive(false);
+        if (noButton != null) noButton.gameObject.SetActive(false);
+    }*/
 }

@@ -1,31 +1,36 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem heartParticles;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] Button yesButton;
+    [SerializeField] Button noButton;
+
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void PlayHearts()
-    {
-        if (heartParticles != null)
-        {
-            heartParticles.Play();
-        }        
-    }
     public void PlayHeartsAtButton(Transform buttonTransform)
     {
         heartParticles.transform.position = buttonTransform.position;
         heartParticles.Play();
+
+        HideButtons();
+    }
+    private void HideButtons()
+    {
+        if (yesButton != null) yesButton.gameObject.SetActive(false);
+        if (noButton != null) noButton.gameObject.SetActive(false);
     }
 }
+
