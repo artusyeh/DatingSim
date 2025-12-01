@@ -17,7 +17,7 @@
     {
       "id": "mc_open_3",
       "speaker": "You",
-      "text": "Maybe it's because I don't really have a social life... And she's the type of person to force herself into yours.",
+      "text": "Maybe it's because I don't really have a social life... And she just so happens to be the type of person to force herself into yours.",
       "next": "aiko_teasing_1"
     },
 
@@ -25,14 +25,14 @@
       "id": "aiko_teasing_1",
       "speaker": "Aiko",
       "expression": "smug",
-      "text": "I swear, if sleeping were a major, you’d be top of the department the way you're snoozing.",
+      "text": "I swear, if sleeping were a major, you’d be top of the department the way you're snoozing!",
       "next": "mc_defensive_1"
     },
     {
       "id": "mc_defensive_1",
       "speaker": "You",
       "expression": "smug",
-      "text": "It wasn’t that bad today???",
+      "text": "...I swear it wasn’t that bad today?",
       "next": "aiko_teasing_2"
     },
     {
@@ -45,20 +45,20 @@
     {
       "id": "mc_denial",
       "speaker": "You",
-      "text": "No I wasn’t?",
+      "text": "...No I wasn’t??",
       "next": "aiko_picture"
     },
     {
       "id": "aiko_picture",
       "speaker": "Aiko",
       "expression": "smug",
-      "text": "Oh really? Should I show you the picture?",
+      "text": "Oh really. Should I show you the picture?",
       "next": "mc_show_what"
     },
     {
       "id": "mc_show_what",
       "speaker": "You",
-      "text": "Show WHAT??",
+      "text": "Show WHAT?",
       "next": "aiko_document_1"
     },
     {
@@ -78,7 +78,7 @@
     {
       "id": "mc_cute_1",
       "speaker": "You",
-      "text": "Cute..? Right.",
+      "text": "Cute? Right...",
       "next": "mc_cute_2"
     },
     {
@@ -116,12 +116,12 @@
       "text": "So… Will you walk me to class?",
       "choices": [
         {
-          "text": "Yeah, sure. Let’s go.",
+          "text": "Yeah, sure. Let’s go!",
           "next": "branch_yes_walk",
           "isCorrect": true
         },
         {
-          "text": "I think I’ll go on my own.",
+          "text": "I think I’ll go on my own...",
           "next": "branch_no_walk",
           "isCorrect": false
         }
@@ -145,7 +145,7 @@
       "id": "aiko_knew_it",
       "speaker": "Aiko",
       "expression": "happy2",
-      "text": "I knew you would.",
+      "text": "I knew you would. I mean... who could resist walking with me?",
       "next": "timer_stop_good_walk"
     },
     {

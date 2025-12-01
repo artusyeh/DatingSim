@@ -19,6 +19,8 @@ public class AikoCharacter : MonoBehaviour
     public Sprite aiko_smug;
     public Sprite aiko_neutral2;
 
+    public AikoBounce bounce;
+
     private Dictionary<string, Sprite> expressionMap;
 
     private void Awake()
@@ -63,6 +65,12 @@ public class AikoCharacter : MonoBehaviour
             // fallback to neutral if unknown/faulty
             if (aiko_neutral != null)
                 spriteRenderer.sprite = aiko_neutral2;
+        }
+
+        // If expression is "happy", trigger bounce
+        if (expression == "happy" && bounce != null)
+        {
+            bounce.PlayBounce();
         }
     }
 }
