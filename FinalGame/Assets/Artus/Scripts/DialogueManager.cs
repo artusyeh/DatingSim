@@ -28,6 +28,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Timer")]
     public TimerScript timerScript;
 
+    // Aiko character reference for expression changes
+    [Header("Aiko Character")]
+    public AikoCharacter aikoCharacter;
+
     private DialogueRoot dialogueRoot;
     private Dictionary<string, DialogueNode> nodeLookup;
     private DialogueNode currentNode;
@@ -154,6 +158,12 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        // Set Aiko's expression if applicable
+        if (currentNode.speaker == "Aiko" && aikoCharacter != null)
+        {
+            aikoCharacter.SetExpression(currentNode.expression);
+        }
+
         // Normal speaker
         if (speakerText != null)
             speakerText.text = currentNode.speaker;
@@ -165,12 +175,11 @@ public class DialogueManager : MonoBehaviour
         StartTyping(currentNode.text);
     }
 
-    /// <summary>
     /// Reacts to special nodes that control the timer.
     /// Uses the "speaker" field as a control string:
     /// - "TimerControl:Stop" -> stop and reset timer + positive heart FX
     /// - "TimerControl:Continue" -> start/continue timer without resetting
-    /// </summary>
+
     void HandleTimerControlNode(DialogueNode node)
     {
         if (timerScript == null) return;

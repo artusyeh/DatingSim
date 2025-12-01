@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ed5f0e0e54cf384594b43ed0673048e
+guid: 7dfe7f7e349511344ba13733aa955e27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4714337388861021706
-    second: aiko_shocked3_0
+      213: 1833411679337907444
+    second: aiko_sad_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: aiko_shocked3_0
+      name: aiko_sad_0
       rect:
         serializedVersion: 2
         x: 308
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0e5766a0e0bc6140800000000000000
-      internalID: 4714337388861021706
+      spriteID: 4f40df16536917910800000000000000
+      internalID: 1833411679337907444
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      aiko_shocked3_0: 4714337388861021706
+      aiko_sad_0: 1833411679337907444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

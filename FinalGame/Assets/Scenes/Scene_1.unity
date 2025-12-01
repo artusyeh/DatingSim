@@ -383,7 +383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -21.900055, y: -130.87}
+  m_AnchoredPosition: {x: -21.900055, y: -130.86996}
   m_SizeDelta: {x: -224.77, y: -329.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136111309
@@ -1190,7 +1190,7 @@ GameObject:
   - component: {fileID: 1203375193}
   - component: {fileID: 1203375195}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: Dialogue Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,6 +1220,7 @@ MonoBehaviour:
   maxPitch: 1.46
   charsPerSound: 2
   timerScript: {fileID: 2092892962}
+  aikoCharacter: {fileID: 1644592230}
   bgmSource: {fileID: 1738840020}
 --- !u!4 &1203375194
 Transform:
@@ -2006,11 +2007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575728616906761382, guid: f2d120bee7bd93045b8f6f4006d75896, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 147.3
+      value: 147.29999
       objectReference: {fileID: 0}
     - target: {fileID: 6575728616906761382, guid: f2d120bee7bd93045b8f6f4006d75896, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.3
+      value: -60.299988
       objectReference: {fileID: 0}
     - target: {fileID: 7350091919639984663, guid: f2d120bee7bd93045b8f6f4006d75896, type: 3}
       propertyPath: m_IsActive
@@ -2194,6 +2195,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!212 &1644592229 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7967463336192063785, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+  m_PrefabInstance: {fileID: 7478125131545010783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1644592230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+  m_PrefabInstance: {fileID: 7478125131545010783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026aeef92b9668547be7052c80f0d285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738840018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,12 +2797,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098838537}
   m_CullTransparentMesh: 1
+--- !u!1001 &7478125131545010783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6200841
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7002307
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.012214661
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709569169466316184, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_sad
+      value: 
+      objectReference: {fileID: 1833411679337907444, guid: 7dfe7f7e349511344ba13733aa955e27, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_pout
+      value: 
+      objectReference: {fileID: -4854854097256104069, guid: d4714a29befc97f41aab7c465f6618c7, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_smug
+      value: 
+      objectReference: {fileID: -376151800951471956, guid: d050c95b7d4c37249be8ded244a2e855, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_angry
+      value: 
+      objectReference: {fileID: 582622035231859805, guid: ebfdf647c14da2b4db6963031783b2a9, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_happy
+      value: 
+      objectReference: {fileID: 2904645379021807299, guid: 3bfab1054c4bc7a4398da2636271ea92, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_neutral
+      value: 
+      objectReference: {fileID: -5929478230838076670, guid: 762c37f3dd17ebd42be66dc22d64c310, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_shocked
+      value: 
+      objectReference: {fileID: -8408109458697258384, guid: 22a3366a71e7c5d489ea31c5e33fcb19, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_blushing
+      value: 
+      objectReference: {fileID: 5113032516073756687, guid: dfa7267704894064988f5603ef8d75fc, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1644592229}
+    - target: {fileID: 1968223444027632361, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: m_Name
+      value: Aiko Character
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1307471488}
   - {fileID: 1243265663}
+  - {fileID: 7478125131545010783}
   - {fileID: 1639438381}
   - {fileID: 751439509}
   - {fileID: 1203375194}
