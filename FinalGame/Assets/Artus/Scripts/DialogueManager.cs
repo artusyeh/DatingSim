@@ -159,7 +159,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Set Aiko's expression if applicable
-        if (currentNode.speaker == "Aiko" && aikoCharacter != null)
+        if (currentNode.speaker == "Aiko" && aikoCharacter != null || currentNode.speaker == "Narrator" && aikoCharacter != null)
         {
             aikoCharacter.SetExpression(currentNode.expression);
         }
