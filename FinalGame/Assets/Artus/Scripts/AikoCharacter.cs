@@ -11,6 +11,8 @@ public class AikoCharacter : MonoBehaviour
     public Sprite aiko_angry;
     public Sprite aiko_blushing;
     public Sprite aiko_happy;
+
+    public Sprite aiko_happy2;
     public Sprite aiko_neutral;
     public Sprite aiko_pout;
     public Sprite aiko_shocked;
@@ -29,7 +31,8 @@ public class AikoCharacter : MonoBehaviour
             { "neutral", aiko_neutral },
             { "pout", aiko_pout },
             { "shocked", aiko_shocked },
-            { "smug", aiko_smug }
+            { "smug", aiko_smug },
+            { "happy2", aiko_happy2 }
         };
     }
 

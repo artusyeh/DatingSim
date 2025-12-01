@@ -30,13 +30,14 @@
     {
       "id": "mc_defensive_1",
       "speaker": "MC",
+      "expression": "smug",
       "text": "It wasn’t that bad today???",
       "next": "aiko_teasing_2"
     },
     {
       "id": "aiko_teasing_2",
       "speaker": "Aiko",
-      "expression": "smug",
+      "expression": "neutral",
       "text": "You were drooling on your notebook again…",
       "next": "mc_denial"
     },
@@ -49,7 +50,7 @@
     {
       "id": "aiko_picture",
       "speaker": "Aiko",
-      "expression": "smug",
+      "expression": "happy2",
       "text": "Oh really? Should I show you the picture?",
       "next": "mc_show_what"
     },
@@ -62,7 +63,7 @@
     {
       "id": "aiko_document_1",
       "speaker": "Aiko",
-      "expression": "smug",
+      "expression": "happy",
       "text": "Of course. Someone has to document your academic downfall for posterity.",
       "next": "aiko_document_2"
     },
@@ -88,13 +89,14 @@
     {
       "id": "aiko_stalking",
       "speaker": "Aiko",
-      "expression": "smug",
+      "expression": "pout",
       "text": "If I were stalking you, you’d never catch me anyway.",
       "next": "narrator_laugh"
     },
     {
       "id": "narrator_laugh",
       "speaker": "Narrator",
+      "expression": "happy2",
       "text": "She laughs playfully.",
       "next": "aiko_late_1"
     },
@@ -140,7 +142,7 @@
     {
       "id": "aiko_knew_it",
       "speaker": "Aiko",
-      "expression": "happy",
+      "expression": "happy2",
       "text": "I knew you would.",
       "next": "timer_stop_good_walk"
     },
