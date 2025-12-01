@@ -4,6 +4,7 @@
     {
       "id": "mc_open_1",
       "speaker": "MC",
+      "expression": "neutral2",
       "text": "I stare dumbfounded at my annoying childhood friend Aiko.",
       "next": "mc_open_2"
     },
@@ -83,6 +84,7 @@
     {
       "id": "mc_cute_2",
       "speaker": "MC",
+      "expression": "neutral2",
       "text": "And most people would call that borderline stalking.",
       "next": "aiko_stalking"
     },
@@ -96,7 +98,7 @@
     {
       "id": "narrator_laugh",
       "speaker": "Narrator",
-      "expression": "happy2",
+      "expression": "happy",
       "text": "She laughs playfully.",
       "next": "aiko_late_1"
     },
