@@ -23,18 +23,21 @@
     {
       "id": "aiko_teasing_1",
       "speaker": "Aiko",
+      "expression": "smug",
       "text": "I swear, if sleeping were a major, you’d be top of the department the way you're snoozing.",
       "next": "mc_defensive_1"
     },
     {
       "id": "mc_defensive_1",
       "speaker": "MC",
+      "expression": "smug",
       "text": "It wasn’t that bad today???",
       "next": "aiko_teasing_2"
     },
     {
       "id": "aiko_teasing_2",
       "speaker": "Aiko",
+      "expression": "neutral",
       "text": "You were drooling on your notebook again…",
       "next": "mc_denial"
     },
@@ -47,6 +50,7 @@
     {
       "id": "aiko_picture",
       "speaker": "Aiko",
+      "expression": "happy2",
       "text": "Oh really? Should I show you the picture?",
       "next": "mc_show_what"
     },
@@ -59,12 +63,14 @@
     {
       "id": "aiko_document_1",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "Of course. Someone has to document your academic downfall for posterity.",
       "next": "aiko_document_2"
     },
     {
       "id": "aiko_document_2",
       "speaker": "Aiko",
+      "expression": "blushing",
       "text": "…And because it’s cute.",
       "next": "mc_cute_1"
     },
@@ -83,24 +89,28 @@
     {
       "id": "aiko_stalking",
       "speaker": "Aiko",
+      "expression": "pout",
       "text": "If I were stalking you, you’d never catch me anyway.",
       "next": "narrator_laugh"
     },
     {
       "id": "narrator_laugh",
       "speaker": "Narrator",
+      "expression": "happy2",
       "text": "She laughs playfully.",
       "next": "aiko_late_1"
     },
     {
       "id": "aiko_late_1",
       "speaker": "Aiko",
+      "expression": "neutral",
       "text": "Anyways we’re gonna be late for the next lecture if you lie here forever.",
       "next": "aiko_ask_walk"
     },
     {
       "id": "aiko_ask_walk",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "So… Will you walk me to class?",
       "choices": [
         {
@@ -125,12 +135,14 @@
     {
       "id": "aiko_brightens",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "(Brightens instantly)",
       "next": "aiko_knew_it"
     },
     {
       "id": "aiko_knew_it",
       "speaker": "Aiko",
+      "expression": "happy2",
       "text": "I knew you would.",
       "next": "timer_stop_good_walk"
     },
@@ -162,30 +174,33 @@
     {
       "id": "aiko_hurt_1",
       "speaker": "Aiko",
-      "text": "Oh…So you don’t wanna walk with me?",
+      "expression": "sad",
+      "text": "Oh… So you don’t wanna walk with me?",
       "next": "mc_not_that"
     },
     {
       "id": "mc_not_that",
       "speaker": "MC",
-      "text": "It’s not that-",
+      "text": "That's not what I meant-",
       "next": "aiko_you_hate_me"
     },
     {
       "id": "aiko_you_hate_me",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "You must really hate me then.",
       "next": "mc_what_shock"
     },
     {
       "id": "mc_what_shock",
       "speaker": "MC",
-      "text": "What???",
+      "text": "???????????",
       "next": "aiko_hurt_2"
     },
     {
       "id": "aiko_hurt_2",
       "speaker": "Aiko",
+      "expression": "pout",
       "text": "I’m always trying to hang out with you and you never show the same effort.",
       "next": "second_branch_prompt"
     },
@@ -222,12 +237,14 @@
     {
       "id": "aiko_you_always_say_that",
       "speaker": "Aiko",
+      "expression": "shocked",
       "text": "You always say that…",
       "next": "aiko_just_say_dont_want"
     },
     {
       "id": "aiko_just_say_dont_want",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Just say you don’t want to hang out with me.",
       "next": "opt1_followup"
     },
@@ -258,6 +275,7 @@
     {
       "id": "aiko_why_put_off",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Then why does it always sound like you’re putting me off?",
       "next": "mc_didnt_mean_merge"
     },
@@ -277,6 +295,7 @@
     {
       "id": "aiko_right_of_course",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "…Right. Of course.",
       "next": "narrator_expression_hardens"
     },
@@ -289,24 +308,28 @@
     {
       "id": "aiko_its_fine_bad_1",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "It’s fine.",
       "next": "aiko_other_problems"
     },
     {
       "id": "aiko_other_problems",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "You don’t want to walk with me because you have other problems.",
       "next": "aiko_see_you_class"
     },
     {
       "id": "aiko_see_you_class",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "See you in class then.",
       "next": "aiko_dont_be_late"
     },
     {
       "id": "aiko_dont_be_late",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Don’t be late…",
       "next": "bad_walk_scene_lock"
     },
@@ -326,6 +349,7 @@
     {
       "id": "aiko_okay_what_mean",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Okay so what do you mean then?",
       "next": "opt2_followup_choices"
     },
@@ -361,6 +385,7 @@
     {
       "id": "aiko_really_bad",
       "speaker": "Aiko",
+      "expression": "blushing",
       "text": "…You’re really bad at this, you know that?",
       "next": "mc_yeah_know"
     },
@@ -379,6 +404,7 @@
     {
       "id": "aiko_walk_now",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "So… does that mean you’ll walk me to class now, or are you gonna say “later” again?",
       "next": "mc_no_later"
     },
@@ -391,6 +417,7 @@
     {
       "id": "aiko_dont_regret",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "Okay. Then… don’t make me regret waiting for you.",
       "next": "timer_stop_2A"
     },
@@ -410,6 +437,7 @@
     {
       "id": "aiko_not_about_me",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "…Not about me, huh?",
       "next": "mc_explain_tired_1"
     },
@@ -434,12 +462,14 @@
     {
       "id": "aiko_could_have_said",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "You could’ve just said that from the start, you know.",
       "next": "aiko_instead_brushing_off"
     },
     {
       "id": "aiko_instead_brushing_off",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Instead of making it sound like you’re brushing me off.",
       "next": "narrator_relaxes"
     },
@@ -452,12 +482,14 @@
     {
       "id": "aiko_i_get_tired",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "I get being tired. I really do.",
       "next": "aiko_feels_extra"
     },
     {
       "id": "aiko_feels_extra",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "But when you keep saying “later,” it feels like I’m the one that’s… extra.",
       "next": "mc_you_not_extra_1"
     },
@@ -476,6 +508,7 @@
     {
       "id": "aiko_too_tired_question",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "…So are you too tired to walk with me now, or…?",
       "next": "mc_can_walk_now"
     },
@@ -488,6 +521,7 @@
     {
       "id": "aiko_you_sure",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "You sure?",
       "next": "mc_next_time_honest"
     },
@@ -500,6 +534,7 @@
     {
       "id": "aiko_you_better",
       "speaker": "Aiko",
+      "expression": "blushing",
       "text": "…You better.",
       "next": "narrator_sigh_smile"
     },
@@ -512,6 +547,7 @@
     {
       "id": "aiko_lets_go_late",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "Okay. Then let’s go before we actually are late.",
       "next": "timer_stop_2B"
     },
@@ -531,6 +567,7 @@
     {
       "id": "aiko_wow_flat",
       "speaker": "Aiko",
+      "expression": "shocked",
       "text": "…Wow.",
       "next": "narrator_voice_flat"
     },
@@ -543,6 +580,7 @@
     {
       "id": "aiko_got_it",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "Got it.",
       "next": "mc_thats_not"
     },
@@ -555,18 +593,21 @@
     {
       "id": "aiko_its_fine_2_1",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "It’s fine.",
       "next": "aiko_its_fine_2_2"
     },
     {
       "id": "aiko_its_fine_2_2",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "Really.",
       "next": "aiko_you_have_way"
     },
     {
       "id": "aiko_you_have_way",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "You have your way of thinking, I have mine.",
       "next": "narrator_steps_back"
     },
@@ -579,12 +620,14 @@
     {
       "id": "aiko_bad_timer_1",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "You don’t want to walk with me because you have other problems.",
       "next": "aiko_bad_timer_2"
     },
     {
       "id": "aiko_bad_timer_2",
       "speaker": "Aiko",
+      "expression": "sad",
       "text": "See you in class then.",
       "next": "bad_walk_scene_timer"
     },
@@ -604,6 +647,7 @@
     {
       "id": "aiko_forcing",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "Oh so now you are just forcing yourself.",
       "next": "mc_wait_no"
     },
@@ -616,6 +660,7 @@
     {
       "id": "aiko_then_what",
       "speaker": "Aiko",
+      "expression": "angry",
       "text": "Then what did you mean?",
       "next": "opt3_followup"
     },
@@ -646,6 +691,7 @@
     {
       "id": "aiko_terrible_words",
       "speaker": "Aiko",
+      "expression": "pout",
       "text": "…You really are terrible with words.",
       "next": "mc_know_panicked"
     },
@@ -665,6 +711,7 @@
     {
       "id": "aiko_if_didnt_complain",
       "speaker": "Aiko",
+      "expression": "pout",
       "text": "So if I didn’t complain, you wouldn’t have bothered?",
       "next": "narrator_pause"
     },
@@ -677,6 +724,7 @@
     {
       "id": "aiko_forget_it",
       "speaker": "Aiko",
+      "expression": "blushing",
       "text": "…Forget it.\nJust—",
       "next": "narrator_hides_smile"
     },
@@ -689,6 +737,7 @@
     {
       "id": "aiko_if_coming_then_come",
       "speaker": "Aiko",
+      "expression": "happy",
       "text": "If you’re coming, then come. If not, I’ll go ahead.",
       "next": "timer_stop_3B"
     },

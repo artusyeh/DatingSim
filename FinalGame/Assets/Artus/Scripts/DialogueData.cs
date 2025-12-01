@@ -17,6 +17,10 @@ public class DialogueNode
     [TextArea] public string text;
     public Choice[] choices;  // null or empty if this is a linear node
     public string next;       // used if there are NO choices
+
+    // NEW: expression field
+    public string expression;
+
 }
 
 [Serializable]
