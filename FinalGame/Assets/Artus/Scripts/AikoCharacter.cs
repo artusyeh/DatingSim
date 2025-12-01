@@ -17,6 +17,9 @@ public class AikoCharacter : MonoBehaviour
     public Sprite aiko_pout;
     public Sprite aiko_shocked;
     public Sprite aiko_smug;
+    public Sprite aiko_neutral2;
+
+    public AikoBounce bounce;
 
     private Dictionary<string, Sprite> expressionMap;
 
@@ -32,7 +35,8 @@ public class AikoCharacter : MonoBehaviour
             { "pout", aiko_pout },
             { "shocked", aiko_shocked },
             { "smug", aiko_smug },
-            { "happy2", aiko_happy2 }
+            { "happy2", aiko_happy2 },
+            { "neutral2", aiko_neutral2 }
         };
     }
 
@@ -47,7 +51,7 @@ public class AikoCharacter : MonoBehaviour
 
         if (string.IsNullOrEmpty(expression))
         {
-            expression = "neutral";
+            expression = "neutral2";
         }
 
         expression = expression.ToLowerInvariant();
@@ -60,7 +64,13 @@ public class AikoCharacter : MonoBehaviour
         {
             // fallback to neutral if unknown/faulty
             if (aiko_neutral != null)
-                spriteRenderer.sprite = aiko_neutral;
+                spriteRenderer.sprite = aiko_neutral2;
+        }
+
+        // If expression is "happy", trigger bounce
+        if (expression == "happy" && bounce != null)
+        {
+            bounce.PlayBounce();
         }
     }
 }

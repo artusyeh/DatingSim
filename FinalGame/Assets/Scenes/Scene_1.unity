@@ -944,6 +944,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &834930983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1968223444027632361, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+  m_PrefabInstance: {fileID: 7478125131545010783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &838914995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2205,12 +2210,27 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
   m_PrefabInstance: {fileID: 7478125131545010783}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 834930983}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026aeef92b9668547be7052c80f0d285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1644592232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834930983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17d4acf12e5d644488dfbf409223470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceHeight: 0.25
+  bounceDuration: 0.2
+  bounceCount: 2
 --- !u!1 &1738840018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,6 +2866,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: bounce
+      value: 
+      objectReference: {fileID: 1644592232}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
       propertyPath: aiko_sad
       value: 
       objectReference: {fileID: 1833411679337907444, guid: 7dfe7f7e349511344ba13733aa955e27, type: 3}
@@ -2882,6 +2906,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5113032516073756687, guid: dfa7267704894064988f5603ef8d75fc, type: 3}
     - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      propertyPath: aiko_neutral2
+      value: 
+      objectReference: {fileID: 2311178877110563303, guid: 1dbcac79dfae0cf4d9b6de3d1dfeb3ee, type: 3}
+    - target: {fileID: 1445660768489452736, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1644592229}
@@ -2892,7 +2920,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1968223444027632361, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1644592232}
   m_SourcePrefab: {fileID: 100100000, guid: 5196e56e38f1fa34b9cfcbf9ca0cf664, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
