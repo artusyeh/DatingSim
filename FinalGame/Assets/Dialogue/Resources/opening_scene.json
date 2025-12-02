@@ -191,13 +191,14 @@
     {
       "id": "aiko_you_hate_me",
       "speaker": "Aiko",
-      "expression": "sad",
+      "expression": "shocked",
       "text": "You must really hate me then.",
       "next": "mc_what_shock"
     },
     {
       "id": "mc_what_shock",
       "speaker": "You",
+      "expression": "sad",
       "text": "???????????",
       "next": "aiko_hurt_2"
     },
@@ -415,7 +416,7 @@
     {
       "id": "mc_no_later",
       "speaker": "You",
-      "text": "No “later.”\nLet’s go.",
+      "text": "No “later.” Let’s go.",
       "next": "aiko_dont_regret"
     },
     {
@@ -729,12 +730,13 @@
       "id": "aiko_forget_it",
       "speaker": "Aiko",
       "expression": "blushing",
-      "text": "…Forget it.\nJust—",
+      "text": "…Forget it. Just—",
       "next": "narrator_hides_smile"
     },
     {
       "id": "narrator_hides_smile",
       "speaker": "Narrator",
+      "expression": "pout",
       "text": "She sighs and tries to hide her smile.",
       "next": "aiko_if_coming_then_come"
     },
